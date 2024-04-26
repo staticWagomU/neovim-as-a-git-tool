@@ -19,7 +19,7 @@ vim.opt.number = true
 
 require('mini.deps').setup { path = { package = path_package } }
 
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add, later = MiniDeps.add, MiniDeps.later
 local opts = { noremap = true }
 
 later(function()
@@ -32,7 +32,7 @@ later(function()
   vim.keymap.set('n', '[g', '<Cmd>Gitsigns prev_hunk<Cr>', opts)
   vim.keymap.set('n', '<C-g><C-p>', '<Cmd>Gitsigns preview_hunk<Cr>', opts)
   vim.keymap.set('n', '<C-g><C-v>', '<Cmd>Gitsigns blame_line<Cr>', opts)
-  vim.keymap.set('n', '<C-g>a', '<Cmd>Gitsigns stage_bu<Cr>', opts)
+  vim.keymap.set('n', '<C-g>a', '<Cmd>Gitsigns stage_buffer<Cr>', opts)
 end)
 
 later(function()
@@ -55,6 +55,7 @@ later(function()
   vim.keymap.set('n', '<C-g><C-s>', '<Cmd>GinStatus<Cr>', opts)
   vim.keymap.set('n', '<C-g><C-b>', '<Cmd>GinBranch<Cr>', opts)
   vim.keymap.set('n', '<C-g><C-l>', '<Cmd>GinLog<Cr>', opts)
+  vim.keymap.set('n', '<C-g>c', '<Cmd>Gin commit<Cr>', opts)
   vim.keymap.set('n', '<C-g>f', ':Gin fetch ', opts)
   vim.keymap.set('n', '<C-g>m', ':Gin merge ', opts)
   vim.keymap.set('n', '<C-g>r', ':Gin rebase --autostash ', opts)
